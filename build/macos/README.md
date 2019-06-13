@@ -2,11 +2,13 @@
 
 **Attention!**
 
+```
 This are just some quick lines of code slapped together to build gimp-2.10.12 while waiting for official DMGs from core GIMP team.
 I do not have extensive knowledge about the code and (unfortunately) am not affiliated with GIMP or GNOME projects in any way.
 Use the scripts at your own risk and so on; I've tried to make them usable by someone except myself, though not very hard.
+```
 
-**Thanks for attention**
+**Thanks for attention.**
 
 ### Prerequisites
 
