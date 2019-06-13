@@ -23,3 +23,6 @@ Info.plist: Info.plist.in
 	  git_last_commit_year="`date -u '+%Y'`"; \
 	fi; \
 	sed -e "$(sedscript)" -e "s/%GIMP_GIT_LAST_COMMIT_YEAR%/$$git_last_commit_year/" $< > $@
+
+clean:
+	rm -f Info.plist

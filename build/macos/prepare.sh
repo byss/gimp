@@ -54,11 +54,11 @@ run_autogen() {
 	# Aclocal won't work without those for some reason
 	export ACLOCAL_FLAGS="-I /usr/local/share/aclocal -I /usr/local/opt/gettext/share/aclocal/"
 	# Your standard .app bundle locations
-	export AUTOGEN_CONFIGURE_ARGS="--prefix=${HOME}/GIMP.app/Contents/Resources --bindir=${HOME}/GIMP.app/Contents/MacOS --enable-static --disable-shared --without-libxpm"
+	export AUTOGEN_CONFIGURE_ARGS="--prefix=${HOME}/GIMP.app/Contents/Resources --bindir=${HOME}/GIMP.app/Contents/MacOS --enable-static=yes --enable-shared=no --without-libxpm"
 	# Optimizing binaries for size and current machine's CPU
 	export CFLAGS="-Os -ftree-vectorize $(pkg-config --cflags gtk+-2.0) -march=native -flto"
-	# Using LTO to optimize resulting binaries (note the mirroring -flto in CFLAGS)
-	export LDFLAGS="$(pkg-config --libs gtk+-2.0) -flto"
+	# Linking static liraries & using LTO to optimize resulting binaries (note the mirroring -flto in CFLAGS)
+	export LDFLAGS="$(pkg-config --libs gtk+-2.0) -all-static -flto"
 
 	./autogen.sh
 }
